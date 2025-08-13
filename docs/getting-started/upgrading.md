@@ -4,9 +4,9 @@
 
 ### Update your Composer.json
 
-To update to the latest version inside of your composer.json file make sure to update the version of Voyager inside the require declaration of your composer.json to:
+To update to the latest version inside of your composer.json file make sure to update the version of OGCRUD inside the require declaration of your composer.json to:
 
-`tcg/voyager": "1.6.*`
+`mertcanaydin97/ogcrud": "1.0.*`
 
 And then run `composer update`
 

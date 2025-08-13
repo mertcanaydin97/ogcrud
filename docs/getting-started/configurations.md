@@ -1,7 +1,7 @@
 # Configurations
 
-With the installation of Voyager you will find a new configuration file located at `config/voyager.php`.  
-In this file you can find various options to change the configuration of your Voyager installation.
+With the installation of OGCRUD you will find a new configuration file located at `config/ogcrud.php`.  
+In this file you can find various options to change the configuration of your OGCRUD installation.
 
 {% hint style="info" %}
 If you cache your configuration files please make sure to run `php artisan config:clear` after you changed something.
@@ -35,16 +35,16 @@ Below we will take a deep dive into the configuration file and give a detailed d
 <?php
 
 'controllers' => [
-    'namespace' => 'TCG\\Voyager\\Http\\Controllers',
+    'namespace' => 'OG\\OGCRUD\\Http\\Controllers',
 ],
 ```
 
-You can specify the default `controller` namespace of Voyager. If you ever wish to override any of the core functionality of Voyager you can do so by duplicating the Voyager controllers and specifying the location of your custom controllers.
+You can specify the default `controller` namespace of OGCRUD. If you ever wish to override any of the core functionality of OGCRUD you can do so by duplicating the OGCRUD controllers and specifying the location of your custom controllers.
 
 {% hint style="info" %}
 **Overwrite a single controller**  
 If you only want to overwrite a single controller, you might consider adding the following piece of code to your `AppServiceProvider` class in the `register` method.  
-`$this->app->bind(VoyagerBreadController::class, MyBreadController::class);`
+`$this->app->bind(OgCrudBreadController::class, MyBreadController::class);`
 {% endhint %}
 
 ## Model
@@ -57,20 +57,20 @@ If you only want to overwrite a single controller, you might consider adding the
 ],
 ```
 
-You can specify the namespace or location of your models. This is used when creating the Models from the database section of Voyager. If not defined the default application namespace will be used.
+You can specify the namespace or location of your models. This is used when creating the Models from the database section of OGCRUD. If not defined the default application namespace will be used.
 
 ## Assets
 
 ```php
 <?php
 
-'assets_path' => '/vendor/tcg/voyager/assets',
+'assets_path' => '/vendor/mertcanaydin97/ogcrud/assets',
 ```
 
 You may wish to specify a different asset path. If your site lives in a subfolder you may need to include that directory to the beginning of the path. This may also be used in case you wish to duplicate the published assets and customize your own.
 
 {% hint style="info" %}
-When upgrading to new version of voyager the assets located in the `/vendor/tcg/voyager/assets` directory may need to be overwritten, so if you wish to customize any styles you will want to duplicate that directory and specify the new location of your asset\_path.
+When upgrading to new version of OGCRUD the assets located in the `/vendor/mertcanaydin97/ogcrud/assets` directory may need to be overwritten, so if you wish to customize any styles you will want to duplicate that directory and specify the new location of your asset\_path.
 {% endhint %}
 
 ## Storage
@@ -83,7 +83,7 @@ When upgrading to new version of voyager the assets located in the `/vendor/tcg/
 ],
 ```
 
-By default Voyager is going to use the `public` local storage. You can additionally use any driver inside of your `config/filesystems.php`. This means you can use S3, Google Cloud Storage, or any other file storage system you would like.
+By default OGCRUD is going to use the `public` local storage. You can additionally use any driver inside of your `config/filesystems.php`. This means you can use S3, Google Cloud Storage, or any other file storage system you would like.
 
 ## Database
 
@@ -98,8 +98,8 @@ By default Voyager is going to use the `public` local storage. You can additiona
 ],
 ```
 
-You may wish to hide some database tables in the Voyager database section. In the database config you can choose which tables would like to hide.  
-`autoload_migrations` allows you to exclude Voyagers migration-files from loading when running `php artisan migrate`.
+You may wish to hide some database tables in the OGCRUD database section. In the database config you can choose which tables would like to hide.  
+`autoload_migrations` allows you to exclude OGCRUD's migration-files from loading when running `php artisan migrate`.
 
 ## Multilingual
 
