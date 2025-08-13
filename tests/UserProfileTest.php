@@ -1,13 +1,13 @@
 <?php
 
-namespace TCG\Voyager\Tests;
+namespace OG\OGCRUD\Tests;
 
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
-use TCG\Voyager\Models\Role;
-use TCG\Voyager\Models\User;
+use OG\OGCRUD\Models\Role;
+use OG\OGCRUD\Models\User;
 
 class UserProfileTest extends TestCase
 {
@@ -25,14 +25,14 @@ class UserProfileTest extends TestCase
 
         $this->user = Auth::loginUsingId(1);
 
-        $this->editPageForTheCurrentUser = route('voyager.users.edit', [$this->user->id]);
+        $this->editPageForTheCurrentUser = route('ogcrud.users.edit', [$this->user->id]);
 
-        $this->listOfUsers = route('voyager.users.index');
+        $this->listOfUsers = route('ogcrud.users.index');
     }
 
     public function testCanSeeTheUserInfoOnHisProfilePage()
     {
-        $this->visit(route('voyager.profile'))
+        $this->visit(route('ogcrud.profile'))
              ->seeInElement('h4', $this->user->name)
              ->seeInElement('.user-email', $this->user->email)
              ->seeLink(__('voyager::profile.edit'));
@@ -40,7 +40,7 @@ class UserProfileTest extends TestCase
 
     public function testCanEditUserName()
     {
-        $this->visit(route('voyager.profile'))
+        $this->visit(route('ogcrud.profile'))
              ->click(__('voyager::profile.edit'))
              ->see(__('voyager::profile.edit_user'))
              ->seePageIs($this->editPageForTheCurrentUser)
@@ -55,7 +55,7 @@ class UserProfileTest extends TestCase
 
     public function testCanEditUserEmail()
     {
-        $this->visit(route('voyager.profile'))
+        $this->visit(route('ogcrud.profile'))
              ->click(__('voyager::profile.edit'))
              ->see(__('voyager::profile.edit_user'))
              ->seePageIs($this->editPageForTheCurrentUser)
@@ -70,7 +70,7 @@ class UserProfileTest extends TestCase
 
     public function testCanEditUserPassword()
     {
-        $this->visit(route('voyager.profile'))
+        $this->visit(route('ogcrud.profile'))
              ->click(__('voyager::profile.edit'))
              ->see(__('voyager::profile.edit_user'))
              ->seePageIs($this->editPageForTheCurrentUser)
@@ -84,7 +84,7 @@ class UserProfileTest extends TestCase
 
     public function testCanEditUserAvatar()
     {
-        $this->visit(route('voyager.profile'))
+        $this->visit(route('ogcrud.profile'))
              ->click(__('voyager::profile.edit'))
              ->see(__('voyager::profile.edit_user'))
              ->seePageIs($this->editPageForTheCurrentUser)
@@ -99,16 +99,16 @@ class UserProfileTest extends TestCase
 
     public function testCanEditUserEmailWithEditorPermissions()
     {
-        $user = \TCG\Voyager\Models\User::factory()->for(\TCG\Voyager\Models\Role::factory())->create();
-        $editPageForTheCurrentUser = route('voyager.users.edit', [$user->id]);
+        $user = \OG\OGCRUD\Models\User::factory()->for(\OG\OGCRUD\Models\Role::factory())->create();
+        $editPageForTheCurrentUser = route('ogcrud.users.edit', [$user->id]);
         // add permissions which reflect a possible editor role
         // without permissions to edit  users
-        $user->role->permissions()->attach(\TCG\Voyager\Models\Permission::whereIn('key', [
+        $user->role->permissions()->attach(\OG\OGCRUD\Models\Permission::whereIn('key', [
             'browse_admin',
             'browse_users',
         ])->get()->pluck('id')->all());
         Auth::onceUsingId($user->id);
-        $this->visit(route('voyager.profile'))
+        $this->visit(route('ogcrud.profile'))
              ->click(__('voyager::profile.edit'))
              ->see(__('voyager::profile.edit_user'))
              ->seePageIs($editPageForTheCurrentUser)
@@ -123,7 +123,7 @@ class UserProfileTest extends TestCase
 
     public function testCanSetUserLocale()
     {
-        $this->visit(route('voyager.profile'))
+        $this->visit(route('ogcrud.profile'))
              ->click(__('voyager::profile.edit'))
              ->see(__('voyager::profile.edit_user'))
              ->seePageIs($this->editPageForTheCurrentUser)

@@ -1,13 +1,13 @@
 <?php
 
-namespace TCG\Voyager\Commands;
+namespace OG\OGCRUD\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Filesystem\Filesystem;
 use Illuminate\Support\Composer;
 use Symfony\Component\Console\Input\InputOption;
-use TCG\Voyager\Providers\VoyagerDummyServiceProvider;
-use TCG\Voyager\VoyagerServiceProvider;
+use OG\OGCRUD\Providers\OgCrudDummyServiceProvider;
+use OG\OGCRUD\OgCrudServiceProvider;
 
 class InstallCommand extends Command
 {
@@ -101,13 +101,13 @@ class InstallCommand extends Command
             $str = file_get_contents($userPath);
 
             if ($str !== false) {
-                $str = str_replace('extends Authenticatable', "extends \TCG\Voyager\Models\User", $str);
+                $str = str_replace('extends Authenticatable', "extends \OG\OGCRUD\Models\User", $str);
 
                 file_put_contents($userPath, $str);
             }
         } else {
             $this->warn('Unable to locate "User.php" in app or app/Models.  Did you move this file?');
-            $this->warn('You will need to update this manually.  Change "extends Authenticatable" to "extends \TCG\Voyager\Models\User" in your User model');
+            $this->warn('You will need to update this manually.  Change "extends Authenticatable" to "extends \OG\OGCRUD\Models\User" in your User model');
         }
 
         $this->info('Adding Voyager routes to routes/web.php');

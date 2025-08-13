@@ -1,12 +1,12 @@
 <?php
 
-namespace TCG\Voyager\Actions;
+namespace OG\OGCRUD\Actions;
 
 class DeleteAction extends AbstractAction
 {
     public function getTitle()
     {
-        return __('voyager::generic.delete');
+        return __('ogcrud::generic.delete');
     }
 
     public function getIcon()

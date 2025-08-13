@@ -1,12 +1,12 @@
 <?php
 
-namespace TCG\Voyager\Actions;
+namespace OG\OGCRUD\Actions;
 
 class EditAction extends AbstractAction
 {
     public function getTitle()
     {
-        return __('voyager::generic.edit');
+        return __('ogcrud::generic.edit');
     }
 
     public function getIcon()
@@ -28,6 +28,6 @@ class EditAction extends AbstractAction
 
     public function getDefaultRoute()
     {
-        return route('voyager.'.$this->dataType->slug.'.edit', $this->data->{$this->data->getKeyName()});
+        return route('ogcrud.'.$this->dataType->slug.'.edit', $this->data->{$this->data->getKeyName()});
     }
 }

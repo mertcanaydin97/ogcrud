@@ -1,12 +1,12 @@
 <?php
 
-namespace TCG\Voyager\Actions;
+namespace OG\OGCRUD\Actions;
 
 class RestoreAction extends AbstractAction
 {
     public function getTitle()
     {
-        return __('voyager::generic.restore');
+        return __('ogcrud::generic.restore');
     }
 
     public function getIcon()
@@ -30,6 +30,6 @@ class RestoreAction extends AbstractAction
 
     public function getDefaultRoute()
     {
-        return route('voyager.'.$this->dataType->slug.'.restore', $this->data->{$this->data->getKeyName()});
+        return route('ogcrud.'.$this->dataType->slug.'.restore', $this->data->{$this->data->getKeyName()});
     }
 }

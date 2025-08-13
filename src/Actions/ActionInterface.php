@@ -1,6 +1,6 @@
 <?php
 
-namespace TCG\Voyager\Actions;
+namespace OG\OGCRUD\Actions;
 
 interface ActionInterface
 {
