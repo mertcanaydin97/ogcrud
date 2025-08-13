@@ -1,9 +1,9 @@
 <?php
 
-namespace TCG\Voyager\Tests;
+namespace OG\OGCRUD\Tests;
 
-use TCG\Voyager\Alert;
-use TCG\Voyager\Facades\Voyager;
+use OG\OGCRUD\Alert;
+use OG\OGCRUD\Facades\OGCRUD;
 
 class AlertTest extends TestCase
 {
@@ -12,21 +12,21 @@ class AlertTest extends TestCase
         $alert = (new Alert('test', 'warning'))
             ->title('Title');
 
-        Voyager::addAlert($alert);
+        OGCRUD::addAlert($alert);
 
-        $alerts = Voyager::alerts();
+        $alerts = OGCRUD::alerts();
 
         $this->assertCount(1, $alerts);
     }
 
     public function testComponentRenders()
     {
-        Voyager::addAlert((new Alert('test', 'warning'))
+        OGCRUD::addAlert((new Alert('test', 'warning'))
             ->title('Title')
             ->text('Text')
             ->button('Button', 'http://example.com', 'danger'));
 
-        $alerts = Voyager::alerts();
+        $alerts = OGCRUD::alerts();
 
         $this->assertEquals('<strong>Title</strong>', $alerts[0]->components[0]->render());
         $this->assertEquals('<p>Text</p>', $alerts[0]->components[1]->render());
@@ -35,19 +35,19 @@ class AlertTest extends TestCase
 
     public function testAlertsRenders()
     {
-        Voyager::addAlert((new Alert('test', 'warning'))
+        OGCRUD::addAlert((new Alert('test', 'warning'))
             ->title('Title')
             ->text('Text')
             ->button('Button', 'http://example.com', 'danger'));
 
-        Voyager::addAlert((new Alert('foo'))
+        OGCRUD::addAlert((new Alert('foo'))
             ->title('Bar')
             ->text('Foobar')
             ->button('Link', 'http://example.org'));
 
         $this->assertXmlStringEqualsXmlFile(
             __DIR__.'/rendered_alerts.html',
-            view('voyager::alerts')->render()
+            view('ogcrud::alerts')->render()
         );
     }
 }

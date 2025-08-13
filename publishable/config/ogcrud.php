@@ -6,7 +6,7 @@ return [
     | User config
     |--------------------------------------------------------------------------
     |
-    | Here you can specify voyager user configs
+    | Here you can specify ogcrud user configs
     |
     */
 
@@ -22,12 +22,12 @@ return [
     | Controllers config
     |--------------------------------------------------------------------------
     |
-    | Here you can specify voyager controller settings
+    | Here you can specify ogcrud controller settings
     |
     */
 
     'controllers' => [
-        'namespace' => 'TCG\\Voyager\\Http\\Controllers',
+        'namespace' => 'OG\\OGCRUD\\Http\\Controllers',
     ],
 
     /*
@@ -74,7 +74,7 @@ return [
     | Database Config
     |--------------------------------------------------------------------------
     |
-    | Here you can specify voyager database settings
+    | Here you can specify ogcrud database settings
     |
     */
 
@@ -90,7 +90,7 @@ return [
     | Multilingual configuration
     |--------------------------------------------------------------------------
     |
-    | Here you can specify if you want Voyager to ship with support for
+    | Here you can specify if you want OGCRUD to ship with support for
     | multilingual and what locales are enabled.
     |
     */
@@ -127,19 +127,19 @@ return [
     'dashboard' => [
         // Add custom list items to navbar's dropdown
         'navbar_items' => [
-            'voyager::generic.profile' => [
-                'route'      => 'voyager.profile',
+            'ogcrud::generic.profile' => [
+                'route'      => 'ogcrud.profile',
                 'classes'    => 'class-full-of-rum',
-                'icon_class' => 'voyager-person',
+                'icon_class' => 'ogcrud-person',
             ],
-            'voyager::generic.home' => [
+            'ogcrud::generic.home' => [
                 'route'        => '/',
-                'icon_class'   => 'voyager-home',
+                'icon_class'   => 'ogcrud-home',
                 'target_blank' => true,
             ],
-            'voyager::generic.logout' => [
-                'route'      => 'voyager.logout',
-                'icon_class' => 'voyager-power',
+            'ogcrud::generic.logout' => [
+                'route'      => 'ogcrud.logout',
+                'icon_class' => 'ogcrud-power',
             ],
         ],
 
@@ -154,7 +154,7 @@ return [
     | Automatic Procedures
     |--------------------------------------------------------------------------
     |
-    | When a change happens on Voyager, we can automate some routines.
+    | When a change happens on OGCRUD, we can automate some routines.
     |
     */
 
@@ -177,17 +177,17 @@ return [
     | UI Generic Config
     |--------------------------------------------------------------------------
     |
-    | Here you change some of the Voyager UI settings.
+    | Here you change some of the OGCRUD UI settings.
     |
     */
 
-    'primary_color' => '#22A7F0',
+    'primary_color' => '#6366f1',
 
     'show_dev_tips' => true, // Show development tip "How To Use:" in Menu and Settings
 
     // Here you can specify additional assets you would like to be included in the master.blade
     'additional_css' => [
-        //'css/custom.css',
+        'css/ogcrud-brand-override.css',
     ],
 
     'additional_js' => [

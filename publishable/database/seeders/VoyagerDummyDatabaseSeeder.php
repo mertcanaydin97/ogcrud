@@ -4,7 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 
-class VoyagerDummyDatabaseSeeder extends Seeder
+class OgCrudDummyDatabaseSeeder extends Seeder
 {
     /**
      * Run the database seeders.

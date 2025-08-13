@@ -1,0 +1,362 @@
+/* OGCRUD Brand Override CSS */
+/* This file overrides all Voyager colors with our new brand identity */
+
+:root {
+  /* OGCRUD Brand Colors */
+  --ogcrud-primary: #6366f1;
+  --ogcrud-primary-dark: #4f46e5;
+  --ogcrud-primary-light: #818cf8;
+  --ogcrud-secondary: #f59e0b;
+  --ogcrud-success: #10b981;
+  --ogcrud-warning: #f59e0b;
+  --ogcrud-danger: #ef4444;
+  --ogcrud-info: #3b82f6;
+  --ogcrud-dark: #1f2937;
+  --ogcrud-light: #f3f4f6;
+  --ogcrud-white: #ffffff;
+  --ogcrud-gray: #6b7280;
+  --ogcrud-gray-light: #9ca3af;
+  --ogcrud-gray-dark: #374151;
+}
+
+/* Primary Color Overrides */
+.btn-primary,
+.btn-primary:focus,
+.btn-primary:hover,
+.btn-primary:active {
+  background-color: var(--ogcrud-primary) !important;
+  border-color: var(--ogcrud-primary-dark) !important;
+  color: var(--ogcrud-white) !important;
+}
+
+.btn-primary:hover {
+  background-color: var(--ogcrud-primary-dark) !important;
+  border-color: var(--ogcrud-primary-dark) !important;
+}
+
+.text-primary {
+  color: var(--ogcrud-primary) !important;
+}
+
+.bg-primary {
+  background-color: var(--ogcrud-primary) !important;
+  color: var(--ogcrud-white) !important;
+}
+
+/* Navigation Overrides */
+.voyager .navbar .navbar-nav > li:hover > a,
+.voyager .navbar.navbar-default .navbar-nav > li:hover > a,
+.voyager .navbar .navbar-nav > li.open > a,
+.voyager .navbar.navbar-default .navbar-nav > li.open > a {
+  color: var(--ogcrud-primary) !important;
+}
+
+.voyager .navbar.navbar-inverse .navbar-nav > li:hover > a,
+.voyager .navbar.navbar-inverse .navbar-nav > li.open > a {
+  color: var(--ogcrud-primary) !important;
+}
+
+/* Side Menu Overrides */
+.voyager .side-menu .navbar-header {
+  background-color: var(--ogcrud-primary) !important;
+}
+
+.voyager .side-menu .navbar-header .navbar-brand {
+  color: var(--ogcrud-primary-light) !important;
+}
+
+.voyager .side-menu .navbar > li.active > a {
+  background-color: var(--ogcrud-white) !important;
+  border-right: 4px solid var(--ogcrud-primary) !important;
+}
+
+.voyager .side-menu .navbar > li:hover > a {
+  background-color: var(--ogcrud-secondary) !important;
+  color: var(--ogcrud-white) !important;
+}
+
+.voyager .side-menu.sidebar-inverse .navbar li.active > a {
+  background-color: var(--ogcrud-white) !important;
+  border-left: 3px solid var(--ogcrud-primary) !important;
+  border-right: 0 solid var(--ogcrud-primary) !important;
+  color: var(--ogcrud-dark) !important;
+  font-weight: 400 !important;
+}
+
+.voyager .side-menu.sidebar-inverse .navbar > li:hover > a {
+  background-color: var(--ogcrud-secondary) !important;
+  color: var(--ogcrud-white) !important;
+}
+
+/* Card Overrides */
+.voyager .card.blue {
+  background-color: var(--ogcrud-primary) !important;
+  color: var(--ogcrud-white) !important;
+}
+
+/* Panel Overrides */
+.voyager .panel.panel-info {
+  border: 1px solid var(--ogcrud-primary) !important;
+}
+
+.voyager .panel.panel-info .panel-heading {
+  background-color: var(--ogcrud-primary-light) !important;
+  border-bottom: 1px solid var(--ogcrud-primary) !important;
+  color: var(--ogcrud-dark) !important;
+}
+
+.voyager .panel.fresh-color.panel-info {
+  border: 1px solid var(--ogcrud-primary) !important;
+}
+
+.voyager .panel.fresh-color.panel-info .panel-heading {
+  background-color: var(--ogcrud-primary) !important;
+  border-bottom: 1px solid var(--ogcrud-primary) !important;
+  color: var(--ogcrud-white) !important;
+}
+
+/* Button Overrides */
+.voyager .btn.btn-info {
+  background-color: var(--ogcrud-primary) !important;
+  border-color: var(--ogcrud-primary) !important;
+  color: var(--ogcrud-white) !important;
+}
+
+.voyager .btn-group-sm > .btn.btn-info,
+.voyager .btn.btn-sm.btn-info {
+  background: var(--ogcrud-primary) !important;
+}
+
+/* Progress Bar Overrides */
+.voyager .progress .progress-bar.progress-bar-info {
+  background-color: var(--ogcrud-primary) !important;
+}
+
+/* Modal Overrides */
+.voyager .modal.modal-info .modal-header {
+  background-color: var(--ogcrud-primary) !important;
+  color: var(--ogcrud-white) !important;
+}
+
+/* Alert Overrides */
+.voyager .alert.alert-info {
+  background-color: var(--ogcrud-primary-light) !important;
+  border-color: var(--ogcrud-primary) !important;
+  color: var(--ogcrud-dark) !important;
+}
+
+.voyager .alert.fresh-color.alert-info {
+  background-color: var(--ogcrud-primary) !important;
+}
+
+/* List Group Overrides */
+.voyager .list-group .list-group-item.list-group-item-info .badge {
+  background-color: var(--ogcrud-white) !important;
+  color: var(--ogcrud-primary) !important;
+}
+
+/* Badge Overrides */
+.voyager .badge.info {
+  background-color: var(--ogcrud-primary) !important;
+}
+
+/* Pricing Table Overrides */
+.voyager .pricing-table.blue .pt-header {
+  background-color: var(--ogcrud-primary) !important;
+  color: var(--ogcrud-white) !important;
+}
+
+.voyager .pricing-table.blue .pt-body {
+  background-color: var(--ogcrud-primary-light) !important;
+  color: var(--ogcrud-dark) !important;
+}
+
+/* Breadcrumb Overrides */
+.breadcrumb a {
+  color: var(--ogcrud-primary) !important;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+  font-weight: 400 !important;
+}
+
+/* Form Control Overrides */
+.btn.btn-primary {
+  background: var(--ogcrud-primary) !important;
+  border: 0 !important;
+  border-radius: 3px !important;
+  color: var(--ogcrud-white) !important;
+  opacity: 0.9 !important;
+}
+
+.btn.btn-primary:hover {
+  opacity: 1 !important;
+}
+
+.btn.btn-primary.active {
+  background: var(--ogcrud-primary-dark) !important;
+}
+
+/* Radio and Checkbox Overrides */
+ul.radio li:hover .check {
+  border: 4px solid var(--ogcrud-primary) !important;
+}
+
+input[type=radio]:checked ~ .check {
+  border: 4px solid var(--ogcrud-primary) !important;
+}
+
+input[type=radio]:checked ~ .check:before {
+  background: var(--ogcrud-primary) !important;
+}
+
+/* Login Page Overrides */
+body.login .login-sidebar {
+  border-top: 5px solid var(--ogcrud-primary) !important;
+}
+
+/* Dropdown Menu Overrides */
+.dropdown-menu > .active > a,
+.dropdown-menu > .active > a:focus,
+.dropdown-menu > .active > a:hover {
+  background-color: var(--ogcrud-primary) !important;
+  color: var(--ogcrud-white) !important;
+}
+
+/* Pagination Overrides */
+.pagination > .active > a,
+.pagination > .active > a:focus,
+.pagination > .active > a:hover,
+.pagination > .active > span,
+.pagination > .active > span:focus,
+.pagination > .active > span:hover {
+  background-color: var(--ogcrud-primary) !important;
+  border-color: var(--ogcrud-primary) !important;
+  color: var(--ogcrud-white) !important;
+}
+
+/* Label Overrides */
+.label-primary {
+  background-color: var(--ogcrud-primary) !important;
+}
+
+/* List Group Active Overrides */
+.list-group-item.active,
+.list-group-item.active:focus,
+.list-group-item.active:hover {
+  background-color: var(--ogcrud-primary) !important;
+  border-color: var(--ogcrud-primary) !important;
+  color: var(--ogcrud-white) !important;
+}
+
+/* Panel Primary Overrides */
+.panel-primary {
+  border-color: var(--ogcrud-primary) !important;
+}
+
+.panel-primary > .panel-heading {
+  background-color: var(--ogcrud-primary) !important;
+  border-color: var(--ogcrud-primary) !important;
+  color: var(--ogcrud-white) !important;
+}
+
+.panel-primary > .panel-heading .badge {
+  background-color: var(--ogcrud-white) !important;
+  color: var(--ogcrud-primary) !important;
+}
+
+/* Nav Pills Overrides */
+.nav-pills > li.active > a,
+.nav-pills > li.active > a:focus,
+.nav-pills > li.active > a:hover {
+  background-color: var(--ogcrud-primary) !important;
+  color: var(--ogcrud-white) !important;
+}
+
+/* Nav Tabs Overrides */
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:focus,
+.nav-tabs > li.active > a:hover {
+  border-color: var(--ogcrud-primary) !important;
+}
+
+/* Link Overrides */
+a {
+  color: var(--ogcrud-primary) !important;
+}
+
+a:focus,
+a:hover {
+  color: var(--ogcrud-primary-dark) !important;
+}
+
+/* Text Color Overrides */
+.text-primary {
+  color: var(--ogcrud-primary) !important;
+}
+
+/* Background Color Overrides */
+.bg-primary {
+  background-color: var(--ogcrud-primary) !important;
+  color: var(--ogcrud-white) !important;
+}
+
+/* Progress Bar Overrides */
+.progress-bar {
+  background-color: var(--ogcrud-primary) !important;
+}
+
+/* Bootstrap Datetimepicker Overrides */
+.bootstrap-datetimepicker-widget table td.active,
+.bootstrap-datetimepicker-widget table td.active:hover {
+  background-color: var(--ogcrud-primary) !important;
+  color: var(--ogcrud-white) !important;
+}
+
+.bootstrap-datetimepicker-widget table td span.active {
+  background-color: var(--ogcrud-primary) !important;
+  color: var(--ogcrud-white) !important;
+}
+
+/* Font Family Override */
+body,
+.voyager {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+}
+
+/* Typography Improvements */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+  font-weight: 600 !important;
+}
+
+/* Modern Border Radius */
+.btn,
+.form-control,
+.panel,
+.card,
+.alert,
+.modal-content {
+  border-radius: 8px !important;
+}
+
+/* Enhanced Shadows */
+.panel,
+.card,
+.modal-content {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06) !important;
+}
+
+/* Smooth Transitions */
+.btn,
+.form-control,
+.panel,
+.card,
+.alert {
+  transition: all 0.2s ease-in-out !important;
+}
+
+/* Focus States */
+.btn:focus,
+.form-control:focus {
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1) !important;
+  border-color: var(--ogcrud-primary) !important;
+}

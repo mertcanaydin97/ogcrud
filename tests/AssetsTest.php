@@ -1,6 +1,6 @@
 <?php
 
-namespace TCG\Voyager\Tests;
+namespace OG\OGCRUD\Tests;
 
 use Illuminate\Support\Facades\Auth;
 
@@ -17,7 +17,7 @@ class AssetsTest extends TestCase
 
     public function testCanOpenFileInAssets()
     {
-        $url = route('voyager.dashboard').$this->prefix.'css/app.css';
+        $url = route('ogcrud.dashboard').$this->prefix.'css/app.css';
 
         $response = $this->call('GET', $url);
         $this->assertEquals(200, $response->status(), $url.' did not return a 200');
@@ -44,7 +44,7 @@ class AssetsTest extends TestCase
      */
     public function testCannotOpenFileOutsideAssets($url)
     {
-        $response = $this->call('GET', route('voyager.dashboard').$this->prefix.$url);
+        $response = $this->call('GET', route('ogcrud.dashboard').$this->prefix.$url);
         $this->assertContains($response->status(), [404, 500], $url.' did not return a 404 or 500');
     }
 }
