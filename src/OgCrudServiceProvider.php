@@ -123,7 +123,7 @@ class OgCrudServiceProvider extends ServiceProvider
 
         $this->registerViewComposers();
 
-        $event->listen('voyager.alerts.collecting', function () {
+        $event->listen('ogcrud.alerts.collecting', function () {
             $this->addStorageSymlinkAlert();
         });
 
@@ -167,11 +167,11 @@ class OgCrudServiceProvider extends ServiceProvider
         }
         $routeName = is_array($currentRouteAction) ? Arr::get($currentRouteAction, 'as') : null;
 
-        if ($routeName != 'voyager.dashboard') {
+        if ($routeName != 'ogcrud.dashboard') {
             return;
         }
 
-        $storage_disk = (!empty(config('voyager.storage.disk'))) ? config('voyager.storage.disk') : 'public';
+        $storage_disk = (!empty(config('ogcrud.storage.disk'))) ? config('ogcrud.storage.disk') : 'public';
 
         if (request()->has('fix-missing-storage-symlink')) {
             if (file_exists(public_path('storage'))) {
@@ -186,9 +186,9 @@ class OgCrudServiceProvider extends ServiceProvider
         } elseif ($storage_disk == 'public') {
             if (!file_exists(public_path('storage')) || @readlink(public_path('storage')) == public_path('storage')) {
                 $alert = (new Alert('missing-storage-symlink', 'warning'))
-                    ->title(__('voyager::error.symlink_missing_title'))
-                    ->text(__('voyager::error.symlink_missing_text'))
-                    ->button(__('voyager::error.symlink_missing_button'), '?fix-missing-storage-symlink=1');
+                                ->title(__('ogcrud::error.symlink_missing_title'))
+            ->text(__('ogcrud::error.symlink_missing_text'))
+            ->button(__('ogcrud::error.symlink_missing_button'), '?fix-missing-storage-symlink=1');
                 OGCRUDFacade::addAlert($alert);
             }
         }
@@ -200,12 +200,12 @@ class OgCrudServiceProvider extends ServiceProvider
 
         if (file_exists(public_path('storage'))) {
             $alert = (new Alert('fixed-missing-storage-symlink', 'success'))
-                ->title(__('voyager::error.symlink_created_title'))
-                ->text(__('voyager::error.symlink_created_text'));
+                            ->title(__('ogcrud::error.symlink_created_title'))
+            ->text(__('ogcrud::error.symlink_created_text'));
         } else {
             $alert = (new Alert('failed-fixing-missing-storage-symlink', 'danger'))
-                ->title(__('voyager::error.symlink_failed_title'))
-                ->text(__('voyager::error.symlink_failed_text'));
+                            ->title(__('ogcrud::error.symlink_failed_title'))
+            ->text(__('ogcrud::error.symlink_failed_text'));
         }
 
         OGCRUDFacade::addAlert($alert);
@@ -221,7 +221,7 @@ class OgCrudServiceProvider extends ServiceProvider
         foreach ($components as $component) {
             $class = 'OG\\OGCRUD\\Alert\\Components\\'.ucfirst(Str::camel($component)).'Component';
 
-            $this->app->bind("voyager.alert.components.{$component}", $class);
+            $this->app->bind("ogcrud.alert.components.{$component}", $class);
         }
     }
 
@@ -253,7 +253,7 @@ class OgCrudServiceProvider extends ServiceProvider
                 "{$publishablePath}/database/seeders/" => database_path('seeders'),
             ],
             'config' => [
-                "{$publishablePath}/config/voyager.php" => config_path('voyager.php'),
+                "{$publishablePath}/config/ogcrud.php" => config_path('ogcrud.php'),
             ],
 
         ];
@@ -266,8 +266,8 @@ class OgCrudServiceProvider extends ServiceProvider
     public function registerConfigs()
     {
         $this->mergeConfigFrom(
-            dirname(__DIR__).'/publishable/config/voyager.php',
-            'voyager'
+            dirname(__DIR__).'/publishable/config/ogcrud.php',
+            'ogcrud'
         );
     }
 
