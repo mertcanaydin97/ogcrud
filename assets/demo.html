@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OGCRUD Brand Demo</title>
+    <link rel="stylesheet" href="ogcrud-brand.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #f9fafb;
+            color: #1f2937;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        .logo {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #6366f1;
+            margin-bottom: 1rem;
+        }
+        .section {
+            margin-bottom: 3rem;
+        }
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #1f2937;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        .color-palette {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        .color-swatch {
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+            color: white;
+            font-weight: 500;
+        }
+        .color-swatch.light {
+            color: #1f2937;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">OGCRUD</div>
+            <p>Modern Laravel Admin Panel - Brand Demo</p>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Color Palette</h2>
+            <div class="color-palette">
+                <div class="color-swatch" style="background-color: #6366f1;">Primary<br>#6366f1</div>
+                <div class="color-swatch" style="background-color: #4f46e5;">Primary Dark<br>#4f46e5</div>
+                <div class="color-swatch" style="background-color: #818cf8;">Primary Light<br>#818cf8</div>
+                <div class="color-swatch" style="background-color: #10b981;">Success<br>#10b981</div>
+                <div class="color-swatch" style="background-color: #f59e0b;">Warning<br>#f59e0b</div>
+                <div class="color-swatch" style="background-color: #ef4444;">Error<br>#ef4444</div>
+                <div class="color-swatch light" style="background-color: #f3f4f6;">Light Gray<br>#f3f4f6</div>
+                <div class="color-swatch light" style="background-color: #ffffff; border: 1px solid #e5e7eb;">White<br>#ffffff</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Buttons</h2>
+            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                <button class="ogcrud-btn ogcrud-btn-primary">Primary Button</button>
+                <button class="ogcrud-btn ogcrud-btn-secondary">Secondary Button</button>
+                <button class="ogcrud-btn ogcrud-btn-success">Success Button</button>
+                <button class="ogcrud-btn ogcrud-btn-warning">Warning Button</button>
+                <button class="ogcrud-btn ogcrud-btn-error">Error Button</button>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Cards</h2>
+            <div class="grid">
+                <div class="ogcrud-card">
+                    <div class="ogcrud-card-header">
+                        <h3 class="ogcrud-card-title">Card Title</h3>
+                    </div>
+                    <p>This is a sample card component with the new OGCRUD branding. It features clean design and modern styling.</p>
+                    <button class="ogcrud-btn ogcrud-btn-primary">Action</button>
+                </div>
+                <div class="ogcrud-card">
+                    <div class="ogcrud-card-header">
+                        <h3 class="ogcrud-card-title">Another Card</h3>
+                    </div>
+                    <p>Cards provide a clean way to organize content and actions. They work well in grids and layouts.</p>
+                    <button class="ogcrud-btn ogcrud-btn-secondary">Learn More</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Alerts</h2>
+            <div class="ogcrud-alert ogcrud-alert-info">
+                <strong>Info:</strong> This is an informational alert with the new OGCRUD styling.
+            </div>
+            <div class="ogcrud-alert ogcrud-alert-success">
+                <strong>Success:</strong> This is a success alert indicating a successful operation.
+            </div>
+            <div class="ogcrud-alert ogcrud-alert-warning">
+                <strong>Warning:</strong> This is a warning alert to draw attention to important information.
+            </div>
+            <div class="ogcrud-alert ogcrud-alert-error">
+                <strong>Error:</strong> This is an error alert for critical issues that need attention.
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Badges</h2>
+            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                <span class="ogcrud-badge ogcrud-badge-primary">Primary</span>
+                <span class="ogcrud-badge ogcrud-badge-success">Success</span>
+                <span class="ogcrud-badge ogcrud-badge-warning">Warning</span>
+                <span class="ogcrud-badge ogcrud-badge-error">Error</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Forms</h2>
+            <div class="ogcrud-card">
+                <h3 class="ogcrud-card-title">Sample Form</h3>
+                <form style="display: flex; flex-direction: column; gap: 1rem;">
+                    <div>
+                        <label for="name" style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Name</label>
+                        <input type="text" id="name" class="ogcrud-input" placeholder="Enter your name">
+                    </div>
+                    <div>
+                        <label for="email" style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Email</label>
+                        <input type="email" id="email" class="ogcrud-input" placeholder="Enter your email">
+                    </div>
+                    <div>
+                        <label for="message" style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Message</label>
+                        <textarea id="message" class="ogcrud-input" rows="4" placeholder="Enter your message"></textarea>
+                    </div>
+                    <button type="submit" class="ogcrud-btn ogcrud-btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Navigation</h2>
+            <nav class="ogcrud-nav">
+                <div style="display: flex; align-items: center; justify-content: space-between;">
+                    <a href="#" class="ogcrud-nav-brand">OGCRUD</a>
+                    <div style="display: flex; gap: 1rem;">
+                        <a href="#" class="ogcrud-nav-link active">Dashboard</a>
+                        <a href="#" class="ogcrud-nav-link">Users</a>
+                        <a href="#" class="ogcrud-nav-link">Settings</a>
+                        <a href="#" class="ogcrud-nav-link">Profile</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+</body>
+</html>
